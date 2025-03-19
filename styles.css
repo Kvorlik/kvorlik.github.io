@@ -59,13 +59,6 @@ hr {
   color: var(--divider);
 }
 
-.project-list hr:not(:first-of-type),
-.education-list hr:not(:first-of-type) {
-  margin: 1rem 0;
-  border-style: dashed;
-  color: var(--divider-pale);
-}
-
 blockquote {
   margin: 0;
   padding: 1rem 1rem 1rem 1.5rem;
@@ -78,8 +71,21 @@ summary {
   cursor: pointer;
 }
 
+ul {
+  margin-bottom: 0;
+}
+
 li {
-  line-height: 2;
+  line-height: 1.5;
+  margin-top: 0.8rem;
+}
+
+.project-list hr:not(:first-of-type),
+.education-list hr:not(:first-of-type),
+.work-expirience hr:not(:first-of-type) {
+  margin: 1rem 0;
+  border-style: dashed;
+  color: var(--divider-pale);
 }
 
 .accent-text {
@@ -126,8 +132,18 @@ li {
   line-height: 1.3;
 }
 
+.work-expirience__columns,
 .project-list__project {
   padding: 0.5rem 0 1.5rem;
+}
+
+.work-expirience__columns:last-child,
+.project-list__project:last-child {
+  padding-bottom: 0;
+}
+
+.work-expirience__column p:last-child {
+  margin-bottom: 0;
 }
 
 .project__description {
@@ -283,6 +299,10 @@ li {
 
   .work-expirience__columns > *:nth-child(2) > p:first-of-type {
     margin-top: 0;
+  }
+
+  .work-expirience__column p.work-expirience__period {
+    margin-bottom: 1rem;
   }
 
   .footer__columns {
