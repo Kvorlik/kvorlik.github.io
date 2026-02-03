@@ -140,11 +140,10 @@
 			</form>
 		</section>
 
-		
-		<section class="survey">
+		<section id="survey" class="survey">
 			<div class="survey__block">
 				<img class="survey__photos" src="static/wedding-invitation/survey-photos.png" alt="Фотографии пары #2">
-	
+
 				<h1>Пожалуйста,<br>заполните анкету</h1>
 				<p class="survey__description">
 					Если вы приглашены парой, просим заполнить<br>
@@ -200,6 +199,8 @@
 
 						<input name="alcohol-another" type="text" placeholder="Посоветуйте алкоголь, который вам нравится" />
 					</div>
+
+					<input type="hidden" name="redirect-to" value="https://kvorlik.github.io/wedding-invitation-success.html">
 
 					<div class="survey__form-section">
 						<button type="submit">Отправить</button>
