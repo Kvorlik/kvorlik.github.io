@@ -13,7 +13,22 @@
 <body>
 	<header class="header">
 		<marquee class="header__ticker">
-			<span>Приглашаем на свадьбу&nbsp;&nbsp;&nbsp;&nbsp;Приглашаем на свадьбу&nbsp;&nbsp;&nbsp;&nbsp;Приглашаем на свадьбу&nbsp;&nbsp;&nbsp;&nbsp;Приглашаем на свадьбу&nbsp;&nbsp;&nbsp;&nbsp;Приглашаем на свадьбу&nbsp;&nbsp;&nbsp;&nbsp;Приглашаем на свадьбу&nbsp;&nbsp;&nbsp;&nbsp;Приглашаем на свадьбу</span>
+			<span>
+				Приглашаем на свадьбу&nbsp;&nbsp;&nbsp;&nbsp;
+				Приглашаем на свадьбу&nbsp;&nbsp;&nbsp;&nbsp;
+				Приглашаем на свадьбу&nbsp;&nbsp;&nbsp;&nbsp;
+				Приглашаем на свадьбу&nbsp;&nbsp;&nbsp;&nbsp;
+				Приглашаем на свадьбу&nbsp;&nbsp;&nbsp;&nbsp;
+				Приглашаем на свадьбу&nbsp;&nbsp;&nbsp;&nbsp;
+				Приглашаем на свадьбу&nbsp;&nbsp;&nbsp;&nbsp;
+				Приглашаем на свадьбу&nbsp;&nbsp;&nbsp;&nbsp;
+				Приглашаем на свадьбу&nbsp;&nbsp;&nbsp;&nbsp;
+				Приглашаем на свадьбу&nbsp;&nbsp;&nbsp;&nbsp;
+				Приглашаем на свадьбу&nbsp;&nbsp;&nbsp;&nbsp;
+				Приглашаем на свадьбу&nbsp;&nbsp;&nbsp;&nbsp;
+				Приглашаем на свадьбу&nbsp;&nbsp;&nbsp;&nbsp;
+				Приглашаем на свадьбу
+			</span>
 		</marquee>
 
 		<div class="header__content-container">
@@ -64,7 +79,16 @@
 				<div class="timeline__handwrite-title"></div>
 				<h1>31 мая 2026</h1>
 				<p>воскресенье</p>
-				<img class="timeline__image" src="static/wedding-invitation/timeline-vertical.png" alt="План дня">
+				<img
+					class="timeline__image timeline__image_vertical"
+					src="static/wedding-invitation/timeline-vertical.png"
+					alt="План дня"
+				>
+				<img
+					class="timeline__image timeline__image_horizontal"
+					src="static/wedding-invitation/timeline-horizontal.png"
+					alt="План дня"
+				>
 			</section>
 		</div>
 
@@ -151,21 +175,20 @@
 				</p>
 
 				<form
-					class="survey__action"
+					class="survey__form"
 					method="post"
-					target="_blank"
 					action="https://formhub.dev/io/fb8d68c0d91c0b178b36d0190e1a7c506973d2714e2d1"
 				>
-					<input name="name" type="text" placeholder="Имя Фамилия" />
+					<input name="name" type="text" placeholder="Имя Фамилия" required />
 
 					<div class="survey__form-section">
 						<p>Будете ли на свадьбе?</p>
 						<div class="survey__form-control">
-							<input type="radio" name="will-go" id="will-go-yes" value="Да" />
+							<input type="radio" name="will-go" id="will-go-yes" value="Да" required />
 							<label for="will-go-yes">Конечно, да</label>
 						</div>
 						<div class="survey__form-control">
-							<input type="radio" name="will-go" id="will-go-no" value="Нет" />
+							<input type="radio" name="will-go" id="will-go-no" value="Нет" required />
 							<label for="will-go-no">К сожалению, нет</label>
 						</div>
 					</div>

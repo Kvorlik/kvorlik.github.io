@@ -21,14 +21,14 @@
     radial-gradient(19.21px at 50% calc(100% + 15px),#0000 99%,#000 101%) 50% calc(100% - 12px)/48px 100% repeat-x;
 
   --wave-mask-huge:
-    radial-gradient(56.23px at 50% 79.2px,#000 99%,#0000 101%) calc(50% - 72px) 0/144px 51% repeat-x,
-    radial-gradient(56.23px at 50% -43.2px,#0000 99%,#000 101%) 50% 36px/144px calc(51% - 36px) repeat-x,
-    radial-gradient(56.23px at 50% calc(100% - 79.2px),#000 99%,#0000 101%) calc(50% - 72px) 100%/144px 51% repeat-x,
-    radial-gradient(56.23px at 50% calc(100% + 43.2px),#0000 99%,#000 101%) 50% calc(100% - 36px)/144px calc(51% - 36px) repeat-x;
+    radial-gradient(55.9px at 50% 75px,#000 99%,#0000 101%) calc(50% - 50px) 0/100px 51% repeat-x,
+    radial-gradient(55.9px at 50% -50px,#0000 99%,#000 101%) 50% 25px/100px calc(51% - 25px) repeat-x,
+    radial-gradient(55.9px at 50% calc(100% - 75px),#000 99%,#0000 101%) calc(50% - 50px) 100%/100px 51% repeat-x,
+    radial-gradient(55.9px at 50% calc(100% + 50px),#0000 99%,#000 101%) 50% calc(100% - 25px)/100px calc(51% - 25px) repeat-x;
 
   --wave-mask-huge-bottom:
-    radial-gradient(56.23px at 50% calc(100% - 79.2px),#000 99%,#0000 101%) calc(50% - 72px) 100%/144px 100%,
-    radial-gradient(56.23px at 50% calc(100% + 43.2px),#0000 99%,#000 101%) 50% calc(100% - 36px)/144px 100% repeat-x;
+    radial-gradient(55.9px at 50% calc(100% - 75px),#000 99%,#0000 101%) calc(50% - 50px) 100%/100px 100% repeat-x,
+    radial-gradient(55.9px at 50% calc(100% + 50px),#0000 99%,#000 101%) 50% calc(100% - 25px)/100px 100% repeat-x;
 }
 
 body {
@@ -195,6 +195,8 @@ input[type="checkbox"]:checked::after {
   top: 0;
   left: 0;
   background-image: url('../static/wedding-invitation/left-lights-stripe.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .header__content-container::after {
@@ -205,6 +207,8 @@ input[type="checkbox"]:checked::after {
   top: 0;
   right: 0;
   background-image: url('../static/wedding-invitation/right-lights-stripe.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .header__photos {
@@ -267,8 +271,9 @@ input[type="checkbox"]:checked::after {
   margin: 32px auto 0;
   display: flex;
   flex-direction: column;
-  row-gap: 12px;
+  gap: 12px;
   width: 100%;
+  max-width: 580px;
 }
 
 .location__action {
@@ -277,7 +282,7 @@ input[type="checkbox"]:checked::after {
   flex-direction: column;
   align-items: stretch;
   align-self: stretch;
-  row-gap: 16px;
+  gap: 16px;
 }
 
 .location__action button {
@@ -302,8 +307,16 @@ input[type="checkbox"]:checked::after {
 
 .timeline__image {
   margin: 32px auto 0;
+}
+
+.timeline__image_vertical {
   width: 100%;
   max-width: 343px;
+}
+
+.timeline__image_horizontal {
+  max-width: 974px;
+  display: none;
 }
 
 .dress-code {
@@ -373,6 +386,10 @@ input[type="checkbox"]:checked::after {
   background-color: var(--color-secondary);
 
   mask:
+    linear-gradient(#000 0 0) exclude,
+    url('../static/wedding-invitation/mask-heart-top.svg') top/contain no-repeat exclude,
+    url('../static/wedding-invitation/mask-heart-bottom.svg') bottom/contain no-repeat exclude;
+  -webkit-mask:
     linear-gradient(#000 0 0) exclude,
     url('../static/wedding-invitation/mask-heart-top.svg') top/contain no-repeat exclude,
     url('../static/wedding-invitation/mask-heart-bottom.svg') bottom/contain no-repeat exclude;
@@ -456,7 +473,7 @@ input[type="checkbox"]:checked::after {
 }
 
 .survey__wave {
-  height: 30px;
+  height: 32px;
   background-color: var(--color-tretiary);
   mask: var(--wave-mask-tiny-bottom);
   -webkit-mask: var(--wave-mask-tiny-bottom);
@@ -489,12 +506,13 @@ input[type="checkbox"]:checked::after {
   column-gap: 10px;
 }
 
-.survey__action {
+.survey__form {
   margin: 32px 0 0;
   display: flex;
   flex-direction: column;
   align-items: stretch;
   align-self: stretch;
+  width: 100%;
 }
 
 .footer {
@@ -506,4 +524,120 @@ input[type="checkbox"]:checked::after {
 
 .footer__description {
   margin: 16px 0 0;
+}
+
+@media (min-width: 580px) {
+  .header__content-container {
+    background-image: url('../static/wedding-invitation/cherkash-big.svg');
+    background-position-y: 90%;
+  }
+
+  .alternative-block {
+    mask: var(--wave-mask-huge);
+    -webkit-mask: var(--wave-mask-huge);
+  }
+
+  .location__action {
+    flex-direction: row;
+    align-self: center;
+  }
+
+  .dress-code {
+    animation: none;
+  }
+
+  .dress-code__examples {
+    justify-content: center;
+  }
+
+  .dress-code__action,
+  .contacts__action {
+    align-self: center;
+  }
+
+  .location__action button,
+  .dress-code__action button,
+  .contacts__action button {
+    min-width: 240px;
+  }
+
+  .rule-set {
+    mask: none;
+    -webkit-mask: none;
+  }
+
+  .survey__block {
+    justify-content: center;
+  }
+
+  .survey__wave {
+    mask: var(--wave-mask-huge-bottom);
+    -webkit-mask: var(--wave-mask-huge-bottom);
+  }
+
+  .survey__form {
+    min-width: 548px;
+    max-width: 580px;
+    align-self: center;
+  }
+
+  .survey__form button {
+    min-width: 240px;
+    align-self: center;
+  }
+}
+
+@media (min-width: 1252px) {
+  .header__content-container {
+    display: grid;
+    grid-template:
+      "empty-one date empty-two" 6fr
+      "empty-one envelope empty-two" 10fr / 2fr 1fr 1fr;
+    margin-bottom: 44px;
+  }
+
+  .header__content-container::before {
+    width: 308px;
+    height: 165px;
+  }
+
+  .header__content-container::after {
+    width: 213px;
+    height: 48px;
+  }
+
+  .header__photos {
+    left: 30%;
+    width: 32vw;
+    height: auto;
+  }
+
+  .header__event-date {
+    margin-top: 210px;
+    grid-area: date;
+  }
+
+  .header__envelope {
+    grid-area: envelope;
+  }
+
+  .location__photos {
+    flex: 1 0 0;
+    flex-direction: row;
+    justify-content: center;
+    width: auto;
+    max-height: 550px;
+  }
+
+  .location__photos img {
+    flex-basis: 0;
+  }
+
+  .timeline__image_vertical {
+    display: none;
+  }
+
+  .timeline__image_horizontal {
+    display: block;
+  }
 }

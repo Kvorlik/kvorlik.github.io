@@ -17,10 +17,10 @@
     radial-gradient(19.21px at 50% calc(100% + 15px),#0000 99%,#000 101%) 50% calc(100% - 12px)/48px calc(51% - 12px) repeat-x;
 
   --wave-mask-huge:
-    radial-gradient(56.23px at 50% 79.2px,#000 99%,#0000 101%) calc(50% - 72px) 0/144px 51% repeat-x,
-    radial-gradient(56.23px at 50% -43.2px,#0000 99%,#000 101%) 50% 36px/144px calc(51% - 36px) repeat-x,
-    radial-gradient(56.23px at 50% calc(100% - 79.2px),#000 99%,#0000 101%) calc(50% - 72px) 100%/144px 51% repeat-x,
-    radial-gradient(56.23px at 50% calc(100% + 43.2px),#0000 99%,#000 101%) 50% calc(100% - 36px)/144px calc(51% - 36px) repeat-x;
+    radial-gradient(55.9px at 50% 75px,#000 99%,#0000 101%) calc(50% - 50px) 0/100px 51% repeat-x,
+    radial-gradient(55.9px at 50% -50px,#0000 99%,#000 101%) 50% 25px/100px calc(51% - 25px) repeat-x,
+    radial-gradient(55.9px at 50% calc(100% - 75px),#000 99%,#0000 101%) calc(50% - 50px) 100%/100px 51% repeat-x,
+    radial-gradient(55.9px at 50% calc(100% + 50px),#0000 99%,#000 101%) 50% calc(100% - 25px)/100px calc(51% - 25px) repeat-x;
 }
 
 body {
@@ -77,6 +77,8 @@ button {
   top: 0;
   left: 0;
   background-image: url('../static/wedding-invitation/left-lights-stripe.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .gratitude::after {
@@ -87,6 +89,8 @@ button {
   top: 0;
   right: 0;
   background-image: url('../static/wedding-invitation/right-lights-stripe.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .gratitude__description {
@@ -127,4 +131,37 @@ button {
 
 .footer__description {
   margin: 16px 0 0;
+}
+
+@media (min-width: 580px) {
+  .survey-suggestion__photo {
+    max-width: 580px;
+  }
+
+  .survey-suggestion,
+  .survey-suggestion__photo {
+    mask: var(--wave-mask-huge);
+    -webkit-mask: var(--wave-mask-huge);
+  }
+
+  .survey-suggestion__action {
+    align-self: center;
+    margin: 24px 0 56px;
+  }
+
+  .survey-suggestion__action button {
+    min-width: 240px;
+  }
+}
+
+@media (min-width: 1252px) {
+  .gratitude::before {
+    width: 308px;
+    height: 165px;
+  }
+
+  .gratitude::after {
+    width: 213px;
+    height: 48px;
+  }
 }
