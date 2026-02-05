@@ -622,15 +622,12 @@ input[type="checkbox"]:checked::after {
   }
 
   .location__photos {
-    flex: 1 0 0;
     flex-direction: row;
     justify-content: center;
-    width: auto;
-    max-height: 550px;
   }
 
   .location__photos img {
-    flex-basis: 0;
+    height: 550px;
   }
 
   .timeline__image_vertical {
